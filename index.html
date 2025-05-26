@@ -1,351 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindful Therapy | Dr. Sarah Johnson</title>
+    <title>Psychotherapist | Azra Noon</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #4fc3a1;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        
-        /* Navigation */
-        .navbar {
-            transition: all 0.3s ease;
-            padding: 15px 0;
-        }
-        
-        .navbar.scrolled {
-            background-color: white !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .nav-link {
-            color: var(--dark-color);
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(74, 111, 165, 0.9) 0%, rgba(22, 96, 136, 0.9) 100%), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') no-repeat center center;
-            background-size: cover;
-            color: white;
-            padding: 150px 0 100px;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 600px;
-        }
-        
-        .hero h1 {
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn-primary {
-            background-color: var(--accent-color);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: #3da389;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        
-        .section-title h2 {
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-color);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .about-img {
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .about-img:hover {
-            transform: scale(1.03);
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background-color: var(--light-color);
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-            border-bottom: 3px solid transparent;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-bottom: 3px solid var(--accent-color);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .testimonial-card {
-            background: var(--light-color);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin: 15px;
-        }
-        
-        .testimonial-img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-        
-        .testimonial-position {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background-color: var(--light-color);
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-control {
-            height: 50px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        
-        textarea.form-control {
-            height: auto;
-        }
-        
-        .contact-info {
-            margin-top: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0 15px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .social-icons a {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 991.98px) {
-            .hero {
-                padding: 120px 0 80px;
-                text-align: center;
-            }
-            
-            .hero-content {
-                margin: 0 auto;
-            }
-            
-            .about-img {
-                margin-bottom: 30px;
-            }
-        }
-        
-        @media (max-width: 767.98px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .contact-form {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-brain me-2"></i>Mindful Therapy
+                <i class="fas fa-brain me-2"></i>Azra Noon
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -371,11 +47,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero d-flex">
         <div class="container">
             <div class="hero-content">
-                <h1>Dr. Sarah Johnson, PhD</h1>
-                <p class="lead">Licensed Clinical Psychologist specializing in cognitive behavioral therapy and mindfulness-based approaches to help you achieve mental wellness and personal growth.</p>
+                <h1><span class="highlight-name">Azra Noon</span>, Licensed Psychotherapist</h1>
+                <p class="lead">Providing a safe, non-judgmental space to support you through anxiety, depression,
+                    trauma recovery, and more using integrative, evidence-based approaches.</p>
                 <a href="#contact" class="btn btn-primary btn-lg">Schedule a Session</a>
             </div>
         </div>
@@ -385,29 +62,45 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Me</h2>
+                <h2>About <span class="highlight-name">Azra Noon</span></h2>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sarah Johnson" class="img-fluid about-img">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="Azra Noon" class="img-fluid about-img">
                 </div>
                 <div class="col-lg-7">
-                    <h3>Professional Therapist with 15+ Years Experience</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-                    <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere.</p>
+                    <h3>Professional Psychotherapist with 10+ Years Experience</h3>
+                    <p>Welcome — I'm Azra Saeed Husain / <span class="highlight-name">Azra Noon</span>, holding a
+                        Diploma in Humanistic Counselling from CPPD and an Advanced Diploma from CPPD. As a licensed
+                        psychotherapist, I’m passionate about supporting individuals through life’s complexities with
+                        empathy, insight, and respect.</p>
+                    <p>With 10 years of clinical experience, I specialize in working with anxiety, depression, trauma
+                        recovery, relationship issues, and addictions. My approach is integrative and evidence-based,
+                        drawing from modalities such as Cognitive Behavioral Therapy (CBT), Psychodynamic Therapy, and
+                        Mindfulness-Based Approaches, tailored to your unique needs. I continuously enhance my expertise
+                        through workshops and classes to provide comprehensive support.</p>
+                    <p>Whether you're seeking help to overcome challenges or to better understand yourself, I’m here to
+                        collaborate with you in building a more balanced, meaningful life.</p>
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Cognitive Behavioral Therapy</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Mindfulness Techniques</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Trauma-Informed Care</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Cognitive
+                                    Behavioral Therapy</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Psychodynamic
+                                    Therapy</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Mindfulness-Based
+                                    Approaches</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Anxiety & Depression</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Relationship Issues</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Stress Management</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Anxiety &
+                                    Depression</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Trauma Recovery
+                                </li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Relationship
+                                    Issues & Addictions</li>
                             </ul>
                         </div>
                     </div>
@@ -429,7 +122,8 @@
                             <i class="fas fa-user-tie"></i>
                         </div>
                         <h4>Individual Therapy</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                        <p>Personalized sessions to address anxiety, depression, and personal growth in a safe,
+                            non-judgmental environment.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -437,17 +131,19 @@
                         <div class="service-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h4>Couples Counseling</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                        <h4>Relationship Counseling</h4>
+                        <p>Support for couples and individuals navigating relationship challenges with empathy and
+                            practical tools.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-child"></i>
+                            <i class="fas fa-heartbeat"></i>
                         </div>
-                        <h4>Child & Adolescent Therapy</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                        <h4>Trauma Recovery</h4>
+                        <p>Specialized therapy to help process and heal from traumatic experiences using evidence-based
+                            techniques.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -456,7 +152,8 @@
                             <i class="fas fa-brain"></i>
                         </div>
                         <h4>Cognitive Behavioral Therapy</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                        <p>Structured approach to identify and modify negative thought patterns for lasting mental
+                            wellness.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -465,16 +162,16 @@
                             <i class="fas fa-spa"></i>
                         </div>
                         <h4>Mindfulness Training</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                        <p>Techniques to cultivate mindfulness and reduce stress, tailored to your unique needs.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-stethoscope"></i>
+                            <i class="fas fa-leaf"></i>
                         </div>
-                        <h4>Trauma Therapy</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                        <h4>Addiction Support</h4>
+                        <p>Compassionate guidance to address and overcome addiction, fostering a path to recovery.</p>
                     </div>
                 </div>
             </div>
@@ -490,8 +187,10 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client" class="testimonial-img">
-                        <p class="mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor."</p>
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client"
+                            class="testimonial-img">
+                        <p class="mb-4">"Working with <span class="highlight-name">Azra Noon</span> has been
+                            transformative. Her empathetic approach helped me navigate my anxiety with confidence."</p>
                         <h5 class="testimonial-author">Emily Rodriguez</h5>
                         <p class="testimonial-position">Marketing Director</p>
                     </div>
@@ -499,15 +198,18 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
                         <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" class="testimonial-img">
-                        <p class="mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor."</p>
+                        <p class="mb-4">"<span class="highlight-name">Azra</span>'s mindfulness techniques gave me tools
+                            to manage stress and find balance in my life."</p>
                         <h5 class="testimonial-author">Michael Chen</h5>
                         <p class="testimonial-position">Software Engineer</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mx-auto">
                     <div class="testimonial-card">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="testimonial-img">
-                        <p class="mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor."</p>
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client"
+                            class="testimonial-img">
+                        <p class="mb-4">"I felt truly heard and supported by <span class="highlight-name">Azra
+                                Noon</span>. Her sessions helped me process my past and move forward."</p>
                         <h5 class="testimonial-author">Jessica Williams</h5>
                         <p class="testimonial-position">School Teacher</p>
                     </div>
@@ -520,10 +222,10 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Get In Touch</h2>
+                <h2>Get In Touch with <span class="highlight-name">Azra Noon</span></h2>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <div class="contact-form">
                         <form>
                             <div class="row">
@@ -540,7 +242,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="contact-info">
                         <h4 class="mb-4">Contact Information</h4>
                         <div class="contact-item">
@@ -567,7 +269,7 @@
                             </div>
                             <div>
                                 <h5>Email</h5>
-                                <p>dr.sarah@mindfultherapy.com</p>
+                                <p>azra.noon@mindfultherapy.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -590,8 +292,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-start">
-                    <h4 class="mb-3">Mindful Therapy</h4>
-                    <p class="mb-4">Professional counseling services to help you navigate life's challenges and achieve mental wellness.</p>
+                    <h4 class="mb-3">Azra Noon</h4>
+                    <p class="mb-4">Professional counseling services by <span class="highlight-name">Azra Noon</span> to
+                        help you navigate life's challenges and achieve mental wellness.</p>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end">
                     <div class="footer-links mb-4">
@@ -612,7 +315,7 @@
             <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2023 Mindful Therapy. All rights reserved.</p>
+                    <p class="mb-0">© 2025 Azra Noon. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> for mental wellness</p>
@@ -626,44 +329,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- Custom JS -->
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Back to top button
-        const backToTopButton = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        });
-    </script>
+    <script src="assets/js/scripts.js"></script>
 </body>
+
 </html>
